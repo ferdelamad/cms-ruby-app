@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SimpleCms</title>
+    <title>Simple CMS</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navigation">
+      <ul>
+        <%puts @nav%>
+       <li>
+         <%= link_to('Home', {:controller => 'pages', :action => 'index'})%>
+       </li>
+       <li>
+         <%= link_to('About', {:controller => 'pages', :action => 'about'})%>
+       </li>
+       <li>
+         <%= link_to('Contact', {:controller => 'pages', :action => 'contact'})%>
+       </li>
+      </ul>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
